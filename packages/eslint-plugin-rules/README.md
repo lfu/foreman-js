@@ -26,14 +26,25 @@ If not specified in the eslintrc file, these components will be checked for an `
   "Checkbox",
   "Chip",
   "ChipGroup",
+  "Content",
   "ContextSelector",
   "Dropdown",
   "DropdownItem",
+  "DropdownList",
   "DropdownSeparator",
   "DropdownToggle",
   "DropdownToggleCheckbox",
+  "DualListSelector",
+  "EmptyState",
+  "EmptyStateActions",
+  "EmptyStateBody",
+  "EmptyStateFooter",
+  "EmptyStateHeader",
   "FormSelect",
+  "KebabToggle",
+  "Masthead",
   "Menu",
+  "MenuToggle",
   "Modal",
   "ModalBoxCloseButton",
   "ModalContent",
@@ -41,24 +52,29 @@ If not specified in the eslintrc file, these components will be checked for an `
   "NavExpandable",
   "NavItem",
   "OptionsMenu",
+  "Page",
+  "PageSidebar",
   "Pagination",
   "Radio",
   "RowWrapper",
+  "SearchInput",
   "Select",
   "Switch",
+  "Tab",
   "TabButton",
   "TabContent",
+  "Table",
+  "TableComposable",
   "Tabs",
   "Text",
   "TextInput",
+  "TextInputGroup",
   "Title",
   "Toolbar",
-  "Table",
-  "TableComposable",
   "Tr"
 ```
 
-You can specify what components you want to check against.
+You can specify what components you want to check against. This replaces the default list entirely.
 ```js
 {
   "plugins": ["@theforeman/rules"],
@@ -71,4 +87,18 @@ You can specify what components you want to check against.
   }
 ```
 
-Here is the list of [OUIA-compliant PatternFly 4 components](https://www.patternfly.org/v4/developer-resources/open-ui-automation/).
+You can also extend the default list with additional components without replacing it:
+```js
+{
+  "plugins": ["@theforeman/rules"],
+  "rules": {
+    "@theforeman/rules/require-ouiaid": [
+      "warn",
+      { "additional": ["CustomComponent", "AnotherComponent"] }
+    ]
+  }
+```
+
+Here is the list of OUIA-compliant PatternFly components:
+- [PatternFly 5](https://v5-archive.patternfly.org/developer-resources/open-ui-automation/)
+- [PatternFly 4](https://v4-archive.patternfly.org/v4/developer-resources/open-ui-automation)
